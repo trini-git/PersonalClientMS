@@ -32,5 +32,17 @@ public class PersonalClientService implements PersonalClientServiceInterface{
 		
 		return personalClientRepository.save(personalClientModel);
 	}
+
+	@Override
+	public Mono<Void> deletePersonalClient(String id) {
+		
+		return personalClientRepository.deleteById(id);
+	}
+
+	@Override
+	public Mono<PersonalClientModel> updatePersonalClient(PersonalClientModel personalClientModel) {
+		
+		return personalClientRepository.save(personalClientModel);
+	}
 		
 }

@@ -1,12 +1,13 @@
 package com.personalclient.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.personalclient.model.PersonalClientModel;
@@ -22,24 +23,37 @@ public class PersonalClientController {
 	@Autowired
 	PersonalClientService personalClientService;
 	
-	@GetMapping("/all")
+	@GetMapping("/get/all")
 	public Flux<PersonalClientModel> getAll(){
 		
 		return personalClientService.getAll();
 		
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/get/{id}")
 	public Mono<PersonalClientModel> getById(@PathVariable String id){
 		
 		return personalClientService.getById(id);
 	}
 	
-	@PostMapping
+	@PostMapping("/insert")
 	public Mono<PersonalClientModel> insertPersonalClient (@RequestBody PersonalClientModel personalClientModel) {
 		
 		return personalClientService.insertPersonalClient(personalClientModel);
 		
 	}
+	
+	@DeleteMapping("/delete/{id}")
+	public Mono<Void> deletePersonalClient(@PathVariable String id){
+		
+		return personalClientService.deletePersonalClient(id);
+	}
+	
+	@PutMapping("/update/{id}")
+	public Mono<PersonalClientModel> updatePersonalClient(@RequestBody PersonalClientModel personalClientModel){
+		
+		return personalClientService.updatePersonalClient(personalClientModel);
+	}
+	
 	
 }

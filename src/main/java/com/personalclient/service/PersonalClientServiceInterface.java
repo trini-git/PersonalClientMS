@@ -12,5 +12,6 @@ public interface PersonalClientServiceInterface {
 	Flux<PersonalClientModel> getAll();
 	Mono<PersonalClientModel> getById(String id);
 	Mono<PersonalClientModel> insertPersonalClient(PersonalClientModel personalClientModel);
-		
+	Mono<Void> deletePersonalClient(String id);
+	Mono<PersonalClientModel> updatePersonalClient(PersonalClientModel personalClientModel);
 }
