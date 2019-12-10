@@ -24,6 +24,9 @@ public class PersonalClientModel {
 	@Field("last_name")
 	private String lastName;
 	
+	@Field("status")
+	private String status;
+	
 	public String getId() {
 		return id;
 	}
@@ -48,5 +51,11 @@ public class PersonalClientModel {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-		
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+			
 }
