@@ -15,5 +15,6 @@ public interface PersonalClientServiceInterface {
 	Mono<PersonalClientModel> deletePersonalClient(PersonalClientModel personalClientModel, String id);
 	Mono<PersonalClientModel> updatePersonalClient(PersonalClientModel personalClientModel, String id);
 	
+	//my own methods
 	Mono<PersonalClientModel> findByDocument(String document);
 }

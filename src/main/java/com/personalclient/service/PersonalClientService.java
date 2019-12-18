@@ -56,6 +56,6 @@ public class PersonalClientService implements PersonalClientServiceInterface {
 	@Override
 	public Mono<PersonalClientModel> findByDocument(String document) {
 		
-		return personalClientRepository.findById(document);
+		return personalClientRepository.findByDocument(document);
 	}
 }
